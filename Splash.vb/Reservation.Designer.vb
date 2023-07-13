@@ -22,6 +22,7 @@ Partial Class Reservation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -36,16 +37,15 @@ Partial Class Reservation
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ClientNameTb = New System.Windows.Forms.TextBox()
+        Me.DateOut = New System.Windows.Forms.DateTimePicker()
         Me.ClientId = New System.Windows.Forms.ComboBox()
+        Me.DateIn = New System.Windows.Forms.DateTimePicker()
         Me.RoomNumberCb = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.DateIn = New System.Windows.Forms.DateTimePicker()
-        Me.DateOut = New System.Windows.Forms.DateTimePicker()
-        Me.ClientNameTb = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReservationDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,7 +135,16 @@ Partial Class Reservation
         'ReservationDGV
         '
         Me.ReservationDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ReservationDGV.Location = New System.Drawing.Point(118, 312)
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ReservationDGV.DefaultCellStyle = DataGridViewCellStyle4
+        Me.ReservationDGV.GridColor = System.Drawing.Color.Navy
+        Me.ReservationDGV.Location = New System.Drawing.Point(14, 312)
         Me.ReservationDGV.Name = "ReservationDGV"
         Me.ReservationDGV.Size = New System.Drawing.Size(720, 150)
         Me.ReservationDGV.TabIndex = 12
@@ -223,6 +232,22 @@ Partial Class Reservation
         Me.Panel1.Size = New System.Drawing.Size(924, 633)
         Me.Panel1.TabIndex = 1
         '
+        'ClientNameTb
+        '
+        Me.ClientNameTb.Enabled = False
+        Me.ClientNameTb.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClientNameTb.Location = New System.Drawing.Point(160, 153)
+        Me.ClientNameTb.Name = "ClientNameTb"
+        Me.ClientNameTb.Size = New System.Drawing.Size(100, 26)
+        Me.ClientNameTb.TabIndex = 27
+        '
+        'DateOut
+        '
+        Me.DateOut.Location = New System.Drawing.Point(638, 149)
+        Me.DateOut.Name = "DateOut"
+        Me.DateOut.Size = New System.Drawing.Size(200, 20)
+        Me.DateOut.TabIndex = 26
+        '
         'ClientId
         '
         Me.ClientId.FormattingEnabled = True
@@ -230,6 +255,13 @@ Partial Class Reservation
         Me.ClientId.Name = "ClientId"
         Me.ClientId.Size = New System.Drawing.Size(121, 21)
         Me.ClientId.TabIndex = 25
+        '
+        'DateIn
+        '
+        Me.DateIn.Location = New System.Drawing.Point(430, 149)
+        Me.DateIn.Name = "DateIn"
+        Me.DateIn.Size = New System.Drawing.Size(200, 20)
+        Me.DateIn.TabIndex = 24
         '
         'RoomNumberCb
         '
@@ -266,7 +298,7 @@ Partial Class Reservation
         Me.Button6.BackColor = System.Drawing.Color.Navy
         Me.Button6.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.Lavender
-        Me.Button6.Location = New System.Drawing.Point(13, 194)
+        Me.Button6.Location = New System.Drawing.Point(12, 172)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(131, 32)
         Me.Button6.TabIndex = 29
@@ -279,46 +311,12 @@ Partial Class Reservation
         Me.Button7.BackColor = System.Drawing.Color.Navy
         Me.Button7.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.Lavender
-        Me.Button7.Location = New System.Drawing.Point(13, 160)
+        Me.Button7.Location = New System.Drawing.Point(16, 129)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(74, 28)
         Me.Button7.TabIndex = 28
         Me.Button7.Text = "Room"
         Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.Navy
-        Me.Button8.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.Lavender
-        Me.Button8.Location = New System.Drawing.Point(16, 126)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(65, 28)
-        Me.Button8.TabIndex = 27
-        Me.Button8.Text = "Staff"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'DateIn
-        '
-        Me.DateIn.Location = New System.Drawing.Point(430, 149)
-        Me.DateIn.Name = "DateIn"
-        Me.DateIn.Size = New System.Drawing.Size(200, 20)
-        Me.DateIn.TabIndex = 24
-        '
-        'DateOut
-        '
-        Me.DateOut.Location = New System.Drawing.Point(638, 149)
-        Me.DateOut.Name = "DateOut"
-        Me.DateOut.Size = New System.Drawing.Size(200, 20)
-        Me.DateOut.TabIndex = 26
-        '
-        'ClientNameTb
-        '
-        Me.ClientNameTb.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClientNameTb.Location = New System.Drawing.Point(160, 153)
-        Me.ClientNameTb.Name = "ClientNameTb"
-        Me.ClientNameTb.Size = New System.Drawing.Size(100, 26)
-        Me.ClientNameTb.TabIndex = 27
         '
         'Reservation
         '
@@ -329,7 +327,6 @@ Partial Class Reservation
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Reservation"
@@ -363,7 +360,6 @@ Partial Class Reservation
     Friend WithEvents Label8 As Label
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
     Friend WithEvents ClientId As ComboBox
     Friend WithEvents DateOut As DateTimePicker
     Friend WithEvents DateIn As DateTimePicker

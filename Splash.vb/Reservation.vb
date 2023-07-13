@@ -2,7 +2,7 @@
 
 Public Class Reservation
     Dim Con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\LogisticVbDb.mdf;Integrated Security=True;Connect Timeout=30")
-
+    Dim key = 0
     Private Sub FillClient()
         Try
             Con.Open()
@@ -21,7 +21,7 @@ Public Class Reservation
     End Sub
     Private Sub FillRoom()
         Try
-            Dim Status = "Free"
+            Dim Status As String = "Free"
             Con.Open()
             Dim cmd As New SqlCommand("SELECT * FROM RoomTbl WHERE RStatus = @Status", Con)
             cmd.Parameters.AddWithValue("@Status", Status)
@@ -37,20 +37,24 @@ Public Class Reservation
             Con.Close()
         End Try
     End Sub
+
     Private Sub populate()
         Try
             Con.Open()
             Dim sql As String = "SELECT * FROM ReservationTbl"
             Dim adapter As SqlDataAdapter = New SqlDataAdapter(sql, Con)
+            Dim builder As SqlCommandBuilder = New SqlCommandBuilder(adapter)
             Dim ds As DataSet = New DataSet()
             adapter.Fill(ds)
             ReservationDGV.DataSource = ds.Tables(0)
-            Con.Close()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Error: " & ex.Message)
+        Finally
+            Con.Close()
         End Try
     End Sub
-    Dim key = 0
+
+
 
     Private Sub Reservation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FillClient()
@@ -64,9 +68,25 @@ Public Class Reservation
         Me.Hide()
     End Sub
     Private Sub GetName()
-        Con.Open()
-        Con.Close()
+        Try
+            Con.Open()
+            Dim Query = "SELECT * FROM ClientTbl WHERE ClId=" & ClientId.SelectedValue.ToString() & ""
+            Dim cmd As New SqlCommand(Query, Con)
+            Dim dt As New DataTable()
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            While reader.Read()
+                ClientNameTb.Text = "" + reader(1).ToString()
+            End While
+
+            reader.Close()
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        Finally
+            Con.Close()
+        End Try
     End Sub
+
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Dim room As New Room
         room.Show()
@@ -118,18 +138,16 @@ Public Class Reservation
     Private Sub Button3_Click(sender As Object, e As EventArgs)
 
     End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If ClientId.SelectedIndex = -1 Or RoomNumberCb.SelectedIndex = -1 Then
+        If ClientId.SelectedItem Is Nothing Or RoomNumberCb.SelectedItem Is Nothing Then
             MsgBox("Missing Information")
         Else
             Try
                 Con.Open()
-                Dim query As String
-                query = "INSERT INTO ReservationTbl (ClId, ClientName, DateIn, DateOut) VALUES (@ClId, @ClientName, @DateIn, @DateOut)"
-                Dim cmd As SqlCommand
-                cmd = New SqlCommand(query, Con)
+                Dim query As String = "INSERT INTO ReservationTbl (ClId, RoomId, ClientName, DateIn, DateOut) VALUES (@ClId, @RoomId, @ClientName, @DateIn, @DateOut)"
+                Dim cmd As SqlCommand = New SqlCommand(query, Con)
                 cmd.Parameters.AddWithValue("@ClId", ClientId.SelectedValue.ToString())
+                cmd.Parameters.AddWithValue("@RoomId", RoomNumberCb.SelectedValue.ToString())
                 cmd.Parameters.AddWithValue("@ClientName", ClientNameTb.Text)
                 cmd.Parameters.AddWithValue("@DateIn", DateIn.Value)
                 cmd.Parameters.AddWithValue("@DateOut", DateOut.Value)
@@ -143,5 +161,62 @@ Public Class Reservation
                 UpdateRoom()
             End Try
         End If
+    End Sub
+
+
+
+
+
+    Private Sub RoomNumberCb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RoomNumberCb.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ClientNameTb_TextChanged(sender As Object, e As EventArgs) Handles ClientNameTb.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If ClientId.SelectedIndex = -1 Or RoomNumberCb.SelectedIndex = -1 Then
+            MsgBox("Missing information")
+        Else
+            Try
+                Con.Open()
+                Dim query As String
+                query = "UPDATE ReservationTbl SET ClientId = @ClientId, ClientName = @ClientName, RoomId = @RoomId, DateIn = @DateIn, DateOut = @DateOut WHERE ResId = @ResId"
+                Dim cmd As SqlCommand = New SqlCommand(query, Con)
+                cmd.Parameters.AddWithValue("@ClientId", ClientId.SelectedValue.ToString())
+                cmd.Parameters.AddWithValue("@ClientName", ClientNameTb.Text)
+                cmd.Parameters.AddWithValue("@RoomId", RoomNumberCb.SelectedValue.ToString())
+                cmd.Parameters.AddWithValue("@DateIn", DateIn.Value)
+                cmd.Parameters.AddWithValue("@DateOut", DateOut.Value)
+                cmd.Parameters.AddWithValue("@ResId", key)
+                cmd.ExecuteNonQuery()
+                MsgBox("Reservation updated successfully")
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                Con.Close()
+                populate()
+            End Try
+        End If
+    End Sub
+
+    Private Sub ReservationDGV_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles ReservationDGV.CellMouseClick
+        Dim row As DataGridViewRow = ReservationDGV.Rows(e.RowIndex)
+        ClientId.SelectedValue = row.Cells(1).Value.ToString
+        ClientNameTb.Text = row.Cells(2).Value.ToString()
+        RoomNumberCb.SelectedValue = row.Cells(3).Value.ToString()
+        DateIn.Value = row.Cells(4).Value.ToString()
+        DateOut.Value = row.Cells(5).Value.ToString()
+
+        If ClientNameTb.Text = "" Then
+            key = 0
+        Else
+            key = Convert.ToInt32(row.Cells(0).Value.ToString())
+        End If
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

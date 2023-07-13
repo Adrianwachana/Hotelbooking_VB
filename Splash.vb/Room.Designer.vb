@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Room
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Room
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -40,7 +40,6 @@ Partial Class Room
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         CType(Me.RoomDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -259,18 +258,6 @@ Partial Class Room
         Me.Button7.Text = "Clients"
         Me.Button7.UseVisualStyleBackColor = False
         '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.Navy
-        Me.Button8.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.Lavender
-        Me.Button8.Location = New System.Drawing.Point(16, 114)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(65, 28)
-        Me.Button8.TabIndex = 27
-        Me.Button8.Text = "Staff"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
         'Room
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -280,7 +267,6 @@ Partial Class Room
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Room"
@@ -313,5 +299,4 @@ Partial Class Room
     Friend WithEvents Label8 As Label
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
 End Class

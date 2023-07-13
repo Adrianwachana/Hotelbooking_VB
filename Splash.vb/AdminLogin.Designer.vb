@@ -23,14 +23,14 @@ Partial Class AdminLogin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.PasswordTbl = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,7 +42,7 @@ Partial Class AdminLogin
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.PasswordTbl)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -51,6 +51,30 @@ Partial Class AdminLogin
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(418, 381)
         Me.Panel1.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Navy
+        Me.Label4.Location = New System.Drawing.Point(391, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(24, 24)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "X"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Navy
+        Me.Label1.Location = New System.Drawing.Point(75, 264)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(79, 24)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Cancel"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button2
         '
@@ -75,13 +99,14 @@ Partial Class AdminLogin
         Me.CheckBox1.Text = "Show password"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'PasswordTbl
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(34, 150)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(183, 26)
-        Me.TextBox2.TabIndex = 7
+        Me.PasswordTbl.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordTbl.Location = New System.Drawing.Point(34, 150)
+        Me.PasswordTbl.Name = "PasswordTbl"
+        Me.PasswordTbl.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTbl.Size = New System.Drawing.Size(183, 26)
+        Me.PasswordTbl.TabIndex = 7
         '
         'Label3
         '
@@ -93,17 +118,6 @@ Partial Class AdminLogin
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Password" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(3, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(214, 50)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "ADMIN LOGIN"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Splash.vb.My.Resources.Resources.newlogocourier
@@ -114,29 +128,16 @@ Partial Class AdminLogin
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'Label2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.Location = New System.Drawing.Point(75, 264)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 24)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Cancel"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Navy
-        Me.Label4.Location = New System.Drawing.Point(391, 9)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(24, 24)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "X"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Navy
+        Me.Label2.Location = New System.Drawing.Point(3, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(214, 50)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "ADMIN LOGIN"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AdminLogin
         '
@@ -160,7 +161,7 @@ Partial Class AdminLogin
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents PasswordTbl As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label

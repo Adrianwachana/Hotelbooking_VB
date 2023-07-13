@@ -22,7 +22,7 @@ Partial Class Staff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -44,8 +44,6 @@ Partial Class Staff
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         CType(Me.AgentsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,9 +115,9 @@ Partial Class Staff
         Me.Label7.ForeColor = System.Drawing.Color.Navy
         Me.Label7.Location = New System.Drawing.Point(346, 244)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 24)
+        Me.Label7.Size = New System.Drawing.Size(113, 24)
         Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Client List"
+        Me.Label7.Text = "Agent List"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GenCb
@@ -136,14 +134,14 @@ Partial Class Staff
         Me.AgentsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.AgentsDGV.Location = New System.Drawing.Point(66, 304)
         Me.AgentsDGV.Name = "AgentsDGV"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Navy
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AgentsDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.AgentsDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.AgentsDGV.Size = New System.Drawing.Size(720, 150)
         Me.AgentsDGV.TabIndex = 12
         '
@@ -278,9 +276,9 @@ Partial Class Staff
         '
         Me.Label8.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Lavender
-        Me.Label8.Location = New System.Drawing.Point(12, 61)
+        Me.Label8.Location = New System.Drawing.Point(9, 9)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(132, 29)
+        Me.Label8.Size = New System.Drawing.Size(91, 29)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Staff"
         '
@@ -290,37 +288,12 @@ Partial Class Staff
         Me.Button6.BackColor = System.Drawing.Color.Navy
         Me.Button6.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.Lavender
-        Me.Button6.Location = New System.Drawing.Point(13, 203)
+        Me.Button6.Location = New System.Drawing.Point(3, 422)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(131, 32)
+        Me.Button6.Size = New System.Drawing.Size(97, 32)
         Me.Button6.TabIndex = 29
-        Me.Button6.Text = "Reservation"
+        Me.Button6.Text = "Logout"
         Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.Navy
-        Me.Button7.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.Lavender
-        Me.Button7.Location = New System.Drawing.Point(13, 169)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(74, 28)
-        Me.Button7.TabIndex = 28
-        Me.Button7.Text = "Room"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.AutoSize = True
-        Me.Button8.BackColor = System.Drawing.Color.Navy
-        Me.Button8.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(186, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.Lavender
-        Me.Button8.Location = New System.Drawing.Point(16, 135)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(84, 32)
-        Me.Button8.TabIndex = 27
-        Me.Button8.Text = "Clients"
-        Me.Button8.UseVisualStyleBackColor = False
         '
         'Staff
         '
@@ -330,8 +303,6 @@ Partial Class Staff
         Me.ClientSize = New System.Drawing.Size(1104, 633)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Staff"
@@ -367,6 +338,4 @@ Partial Class Staff
     Friend WithEvents Label2 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
 End Class
